@@ -3,18 +3,20 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 
+const courseRoutes = require('./app/routes/course.routes');
+
 const app = express();
 
-const db = require("./app/models");
+app.use(cors(corsOptions));
+app.options("*", cors()); // This is fine to keep, but make sure it's before your route definitions.
+app.use('/api', courseRoutes);
 
-db.sequelize.sync();
+
+// const db = require("./app/models");
 
 var corsOptions = {
   origin: "http://localhost:8081",
 };
-
-app.use(cors(corsOptions));
-app.options("*", cors());
 
 // parse requests of content-type - application/json
 app.use(express.json());
