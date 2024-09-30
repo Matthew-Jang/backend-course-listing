@@ -4,7 +4,7 @@ const dbConfig  = {
     HOST: 'localhost',
     USER: 'root',
     PASSWORD: '',
-    DB: 'course',
+    DB: 'course4',
     dialect: 'mariadb',
     pool: {
         max: 5,
