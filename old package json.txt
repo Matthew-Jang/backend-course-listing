@@ -19,8 +19,6 @@
 //     "pug": "^3.0.3"
 //   }
 
-//    "bundle": "mkdir deploy && cp -r app server.js package.json package-lock.json course-backend.service deploy"
-
 
 
 //"name": "seiv-p2-node", swapped from norths to  "name": "backend-course-listing",
