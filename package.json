@@ -1,10 +1,10 @@
 {
-  "name": "backend-course-listing",
+  "name": "seiv-p2-node",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "start": "node server.js",
-    "bundle": "mkdir deploy && cp -r app server.js package.json package-lock.json course-backend.service deploy"
+    "bundle": "mkdir deploy && cp -r app server.js package.json package-lock.json course-backend.service deploy rm deploy/config/db.config.js && mv deploy/config/prod.db.config.js deploy/config/db.config.js"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
