@@ -18,7 +18,8 @@
 //     "mysql": "^2.18.1",
 //     "pug": "^3.0.3"
 //   }
-// }
+
+//    "bundle": "mkdir deploy && cp -r app server.js package.json package-lock.json course-backend.service deploy"
 
 
 
