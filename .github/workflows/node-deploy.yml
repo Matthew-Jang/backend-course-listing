@@ -15,7 +15,10 @@ jobs:
           ref: dev
       - uses: actions/setup-node@v1
       - run: npm install
-      - run: npm run bundle
+      - run: |
+          mkdir -p deploy/config
+          cp -r app server.js package.json package-lock.json course-backend.service deploy/
+          rm -f deploy/config/db.config.js && mv deploy/config/prod.db.config.js deploy/config/db.config.js
       - name: Deploy to Server
         uses: easingthemes/ssh-deploy@v2.1.1
         env:

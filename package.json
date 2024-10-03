@@ -3,8 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node server.js",
-    "bundle": "mkdir -p deploy/config cp -r app server.js package.json package-lock.json course-backend.service deploy/ if [ -f deploy/config/db.config.js ]; then rm deploy/config/db.config.js; fi mv deploy/config/prod.db.config.js deploy/config/db.config.js"  
+    "start": "node server.js"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
