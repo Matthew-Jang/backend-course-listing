@@ -60,7 +60,7 @@ exports.updateCourse = async (req, res) => {
 exports.deleteCourse = async (req, res) => {
   try {
     const deleted = await Course.destroy({
-      where: { id: req.params.id },
+      where: { course_number: req.params.id },
     });
     if (deleted) {
       res.sendStatus(204);
