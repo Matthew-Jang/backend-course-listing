@@ -1,17 +1,13 @@
 require("dotenv").config();
-
 const express = require("express");
-const cors = require("cors");
-
-const courseRoutes = require('./app/routes/course.routes');
 
 const app = express();
 
+const cors = require("cors");
+
+
 app.use(cors(corsOptions));
 app.options("*", cors()); // This is fine to keep, but make sure it's before your route definitions.
-app.use('/api', courseRoutes);
-
-
 // const db = require("./app/models");
 
 var corsOptions = {
@@ -23,6 +19,13 @@ app.use(express.json());
 
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
+
+
+const courseRoutes = require('./app/routes/course.routes');
+app.use('/api', courseRoutes);
+
+
+
 
 // simple route
 app.get("/", (req, res) => {
