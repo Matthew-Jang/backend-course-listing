@@ -14,7 +14,7 @@ const dbConfig = {
   },
 };
 
-const sequelize = new Sequelize(dbConfig.DB_NAME, dbConfig.DB_USER, dbConfig.PW, {
+const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
     host: dbConfig.HOST,
     dialect: dbConfig.dialect,
     dialectOptions: {

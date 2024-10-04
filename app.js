@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var courseRouter = require('./routes/course.routes'); // Adjust path as needed
 
 var app = express();
 
@@ -19,8 +20,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Use the routers
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/course-t4', courseRouter); // Add this line for your course routes
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
