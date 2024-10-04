@@ -35,7 +35,7 @@ jobs:
           privateKey: ${{ secrets.SERVER_SSH_KEY }}
           debug: false
           command: |
-            cd nodeapps/project2/2024/t4
+            cd nodeapps/2024/project2/t4
             npm install
             sudo systemctl stop course-backend
             sudo cp course-backend.service /lib/systemd/system/course-backend-t4.service

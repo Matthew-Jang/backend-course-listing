@@ -6,6 +6,7 @@ exports.getAllCourses = async (req, res) => {
     const courses = await Course.findAll();
     res.json(courses);
   } catch (error) {
+    console.log(error);
     res.status(500).send('Server error');
   }
 };
@@ -20,6 +21,7 @@ exports.getCourseById = async (req, res) => {
       res.status(404).send('Course not found');
     }
   } catch (error) {
+    console.log(error);
     res.status(500).send('Server error');
   }
 };
@@ -30,6 +32,8 @@ exports.createCourse = async (req, res) => {
     const course = await Course.create(req.body);
     res.status(201).json(course);
   } catch (error) {
+    // console.log(error);
+    console.log(req.body.dept);
     res.status(400).send('Bad request');
   }
 };
@@ -38,7 +42,7 @@ exports.createCourse = async (req, res) => {
 exports.updateCourse = async (req, res) => {
   try {
     const [updated] = await Course.update(req.body, {
-      where: { id: req.params.id },
+      where: { course_number: req.params.id },
     });
     if (updated) {
       const updatedCourse = await Course.findByPk(req.params.id);
@@ -47,6 +51,7 @@ exports.updateCourse = async (req, res) => {
       res.status(404).send('Course not found');
     }
   } catch (error) {
+    console.log(error);
     res.status(400).send('Bad request');
   }
 };
@@ -55,7 +60,7 @@ exports.updateCourse = async (req, res) => {
 exports.deleteCourse = async (req, res) => {
   try {
     const deleted = await Course.destroy({
-      where: { id: req.params.id },
+      where: { course_number: req.params.id },
     });
     if (deleted) {
       res.sendStatus(204);
@@ -63,6 +68,7 @@ exports.deleteCourse = async (req, res) => {
       res.status(404).send('Course not found');
     }
   } catch (error) {
+    console.log(error);
     res.status(500).send('Server error');
   }
 };
