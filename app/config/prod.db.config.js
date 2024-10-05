@@ -40,4 +40,4 @@ sequelize.authenticate()
     });
 
 // Export the Sequelize instance
-module.exports = sequelize;
+module.exports = { sequelize, dbConfig };
