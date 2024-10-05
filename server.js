@@ -30,8 +30,8 @@ app.get("/", (req, res) => {
 });
 
 // set port, listen for requests
-const PORT = process.env.PORT || 3100;
-// const PORT = 3014;
+// const PORT = process.env.PORT || 3100;
+const PORT = 3014;
 if (process.env.NODE_ENV !== "test") {
   app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}.`);
