@@ -6,7 +6,7 @@ const db_pw = process.env.DB_PW;
 const db_user = process.env.DB_USER;
 const db_name = process.env.DB_NAME;
 
-module.exports = {
+const dbConfig = {
   HOST: db_host,
   USER: db_user,
   PASSWORD: db_pw,
@@ -20,14 +20,14 @@ module.exports = {
   },
 };
 
-const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.PW, {
-    host: dbConfig.HOST,
+const sequelize = new Sequelize(db_name, db_user, db_pw, {
+    host: db_host,
     dialect: dbConfig.dialect,
     dialectOptions: {
         allowPublicKeyRetrieval: true,
     },
     pool: dbConfig.pool,
-    port: 3307,
+    port: 3306,
 });
 
 // Test the connection
@@ -40,4 +40,7 @@ sequelize.authenticate()
     });
 
 // Export the Sequelize instance
-module.exports = sequelize;
+module.exports = {
+    sequelize,
+    dbConfig,
+};
