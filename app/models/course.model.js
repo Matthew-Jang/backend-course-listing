@@ -1,4 +1,4 @@
-const { sequelize } = require('../config/db.config'); // Adjust path as needed
+const sequelize = require('../config/db.config'); // Adjust path as needed
 const { DataTypes } = require('sequelize');
 
 const Course = sequelize.define('Course', {
