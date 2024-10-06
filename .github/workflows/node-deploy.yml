@@ -22,6 +22,8 @@ jobs:
       - run: npm install
           
       - run: |
+          pwd
+          dir
           cd nodeapps/2024/project2/t4
           touch .env
           echo DB_HOST="$DB_HOST" >> .env
