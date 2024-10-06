@@ -6,7 +6,7 @@ After=network.target
 Type=simple
 User=ubuntu
 WorkingDirectory=/home/ubuntu/nodeapps/2024/project2/t4
-ExecStart=/usr/bin/npm run start
+ExecStart=/usr/bin/node /home/ubuntu/nodeapps/2024/project2/t4/server.js
 Restart=on-failure
  
 [Install]
