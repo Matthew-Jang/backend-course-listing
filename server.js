@@ -7,7 +7,7 @@ const courseRoutes = require('./app/routes/course.routes');
 const app = express();
 
 const corsOptions = {
-  origin: "http://localhost:8081",
+  origin: "http://project2.eaglesoftwareteam.com",
 };
 
 app.use(cors(corsOptions));
