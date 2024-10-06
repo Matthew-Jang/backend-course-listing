@@ -10,6 +10,10 @@ const corsOptions = {
   origin: "http://project2.eaglesoftwareteam.com",
 };
 
+// const corsOptions = {
+//     origin: "http://localhost:8081",
+//   };
+
 app.use(cors(corsOptions));
 
 app.options("*", cors()); 
