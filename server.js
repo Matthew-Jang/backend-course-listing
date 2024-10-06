@@ -35,11 +35,17 @@ app.get("/", (req, res) => {
 
 // set port, listen for requests
 // const PORT = process.env.PORT || 3100;
+
+// const PORT = 3014;
+// if (process.env.NODE_ENV !== "test") {
+//   app.listen(PORT, () => {
+//     console.log(`Server is running on port ${PORT}.`);
+//   });
+// }
+
 const PORT = 3014;
-if (process.env.NODE_ENV !== "test") {
-  app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}.`);
-  });
-}
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server is running on port ${PORT}.`);
+});
 
 module.exports = app;
