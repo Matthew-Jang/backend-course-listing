@@ -20,13 +20,14 @@ jobs:
           ref: dev
       - uses: actions/setup-node@v1
       - run: npm install
-
+          
       - run: |
+          cd nodeapps/2024/project2/t4
           touch .env
-          echo DB_HOST="${{ secrets.AWS_DB_HOST }}" >> .env
-          echo DB_PW="${{ secrets.AWS_DB_PW }}" >> .env
-          echo DB_USER="${{ secrets.AWS_DB_USER }}" >> .env
-          echo DB_NAME="${{ secrets.AWS_DB_NAME }}" >> .env
+          echo DB_HOST="$DB_HOST" >> .env
+          echo DB_PW="$DB_PW" >> .env
+          echo DB_USER="$DB_USER" >> .env
+          echo DB_NAME="$DB_NAME" >> .env
 
       - run: npm run bundle
 
