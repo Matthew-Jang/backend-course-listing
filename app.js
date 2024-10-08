@@ -11,7 +11,10 @@ const app = express();
 
 // CORS configuration
 const corsOptions = {
-  origin: "http://localhost:8081", // Change as needed
+  origin: [
+    "http://localhost:8081", // Change as needed
+    "http://project2.eaglesoftwareteam.com",
+  ]
 };
 
 app.use(cors(corsOptions)); // Use CORS middleware
